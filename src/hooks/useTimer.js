@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useToast } from '@chakra-ui/react';
 import ConfigurationTimerContext from '../contexts/ConfigurationTimerContext';
 import { STATUS } from '../config/constants';
 import { SETS_ACTIONS } from '../reducers/setsReducer';
@@ -8,6 +9,15 @@ const useTimer = () => {
   const [timer, setTimer] = React.useState(0);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isPaused, setIsPaused] = React.useState(false);
+  const toast = useToast();
+  const errorToast = () =>
+    toast({
+      title: 'Error.',
+      description: 'Please fill the settings form.',
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+    });
 
   const isValid = React.useMemo(() => {
     const { rounds, sets, work, preparation, rest, restBetweenSets } = timerState;
@@ -17,7 +27,9 @@ const useTimer = () => {
   const play = () => {
     if (!isPlaying) {
       if (isValid) setIsPlaying(true);
-      else console.log();
+      else {
+        errorToast();
+      }
     } else if (isPlaying && isPaused) {
       setIsPaused(false);
     }

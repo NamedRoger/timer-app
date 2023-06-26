@@ -1,5 +1,8 @@
 module.exports = {
-  packagerConfig: {},
+  packagerConfig: {
+    platform: 'win32',
+    arch: 'ia32', // o "x64" para 64-bit
+  },
   rebuildConfig: {},
   makers: [
     {
@@ -8,7 +11,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['win32', 'darwin'],
     },
     {
       name: '@electron-forge/maker-deb',
