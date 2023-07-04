@@ -21,5 +21,9 @@ jobs:
       - name: Make a Zip
         run: yarn make
 
-      - name: List Files
-        run: ls
+      - name: Upload Zip to Google Drive
+        uses: Jumbo810/Upload_Github_Artifacts_TO_GDrive@v1.1.1
+        with:
+          target: 'out'
+          credentials: ${{secrets.GD_KEY}}
+          parent_folder_id: 1D1mfKpD3izA3fitADnsz7fv-LGV92Kla
