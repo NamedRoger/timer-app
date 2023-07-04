@@ -24,9 +24,9 @@ jobs:
       - name: List Files
         run: ls out/make/zip/win32/x64
 
-      # - name: Upload Zip to Google Drive
-      #   uses: Jumbo810/Upload_Github_Artifacts_TO_GDrive@v1.1.1
-      #   with:
-      #     target: 'out'
-      #     credentials: ${{secrets.GD_KEY}}
-      #     parent_folder_id: 1D1mfKpD3izA3fitADnsz7fv-LGV92Kla
+      - name: Upload Zip to Google Drive
+        uses: Jumbo810/Upload_Github_Artifacts_TO_GDrive@v1.1.1
+        with:
+          target: 'out/make/zip/win32/x64/timer-app-win32-x64-1.0.0.zip'
+          credentials: ${{secrets.GD_KEY}}
+          parent_folder_id: 1D1mfKpD3izA3fitADnsz7fv-LGV92Kla
