@@ -13,13 +13,13 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18.x'
 
       - name: Install Dependecies
-        run: npm ci
+        run: yarn
 
       - name: Make a Zip
-        run: npm run make
+        run: yarn make
 
       - name: List Files
         run: ls
