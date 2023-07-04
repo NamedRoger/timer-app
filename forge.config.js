@@ -1,8 +1,5 @@
 module.exports = {
-  packagerConfig: {
-    platform: 'win32',
-    arch: 'ia32', // o "x64" para 64-bit
-  },
+  packagerConfig: {},
   rebuildConfig: {},
   makers: [
     {
