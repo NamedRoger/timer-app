@@ -29,4 +29,4 @@ jobs:
         with:
           target: 'out/make/zip/win32/x64/timer-app-win32-x64-1.0.0.zip'
           credentials: ${{secrets.GD_KEY}}
-          parent_folder_id: 1D1mfKpD3izA3fitADnsz7fv-LGV92Kla
+          parent_folder_id: '1D1mfKpD3izA3fitADnsz7fv-LGV92Kla'
