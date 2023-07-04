@@ -63,12 +63,12 @@ const useTimer = () => {
           case STATUS.preparation.key:
             dispatch({ type: SETS_ACTIONS.setStatus, value: STATUS.work.key });
             setTimer(timerState.work);
+            dispatch({ type: SETS_ACTIONS.incrementSet });
             break;
           case STATUS.work.key:
-            dispatch({ type: SETS_ACTIONS.incrementSet });
             if (timerState.elapsedRounds === timerState.rounds) {
               reset();
-            } else if (timerState.elapsedSets === timerState.sets - 1) {
+            } else if (timerState.elapsedSets === timerState.sets) {
               dispatch({ type: SETS_ACTIONS.setStatus, value: STATUS.switchSet.key });
               setTimer(timerState.restBetweenSets);
               dispatch({ type: SETS_ACTIONS.resetSet });
@@ -80,6 +80,7 @@ const useTimer = () => {
           case STATUS.rest.key:
             dispatch({ type: SETS_ACTIONS.setStatus, value: STATUS.work.key });
             setTimer(timerState.work);
+            dispatch({ type: SETS_ACTIONS.incrementSet });
             break;
           case STATUS.switchSet.key:
             if (timerState.elapsedRounds < timerState.rounds) {

@@ -8,7 +8,6 @@ import {
   Text,
   VStack,
   useDisclosure,
-  useToast,
 } from '@chakra-ui/react';
 import { MdPlayArrow, MdPause, MdSettings, MdReplay } from 'react-icons/md';
 import ConfigurationTimerContext from './contexts/ConfigurationTimerContext';
